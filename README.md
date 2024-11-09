@@ -24,7 +24,6 @@ Tensorflow supports Python versions: 3.9–3.12.
 python classify.py
 ```
 
-- [] update this, make this more frictionless
 
 - Drag and drop the image file you want to classify onto the main directory
 - Copy the image file's name from the directory along with .(image's filetype)
