@@ -5,8 +5,9 @@ import numpy as np
 from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
 from keras.preprocessing import image
+import sys
 
-img = 'image.filetype'
+img = sys.argv[2]
 
 MODEL = load_model(os.path.join('models', 'T1'))
 

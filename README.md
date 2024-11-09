@@ -21,11 +21,10 @@ Tensorflow supports Python versions: 3.9–3.12.
 ### Running the project
 
 ```shell script
-python classify.py
+python classify.py -i image.filetype
 ```
 
 
 - Drag and drop the image file you want to classify onto the main directory
-- Copy the image file's name from the directory along with .(image's filetype)
-- Go to https://github.com/souryatech/tomato-leaf-disease/blob/8f6e43e0c869cddc2abeed16c1c77cf1368162da/classify.py and replace the variable img with the text in quotes ('image.filetype' to '(name you copied).(image's filetype)')
-- Then run the file and the class and confidence will then be outputted
+- Use the command above, replace image.filetype with the name of the image file and its filetype
+- Class and confidence would then be outputted
