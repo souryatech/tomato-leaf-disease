@@ -12,7 +12,16 @@
 git clone https://github.com/souryatech/tomato-leaf-disease.git
 cd tomato-leaf-disease
 python3.12 -m venv venv
+```
+
+If using git bash or a unix shell, copy and paste the following in your terminal:
+```shell script
 source venv/bin/activate
+pip install -r requirements.txt
+```
+If using another shell, copy and paste the following in your terminal:
+```shell script
+.venv/Scripts/Activate
 pip install -r requirements.txt
 ```
 
