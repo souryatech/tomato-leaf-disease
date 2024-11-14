@@ -42,5 +42,5 @@ python classify.py -i image.filetype
 - They are numbered 1 through 6, with the order of 1: Early Blight, 2: Late Blight, 3: Leaf Mold, 4: Yellowleaf Curl Virus, 5: Mosaic Virus, 6: Healthy
 - Copy and paste the following into your terminal with one of the numbers above
 ```shell script
-python classify.py -i #.jpg
+python classify.py -i $IMG_NUMBER.jpg
 ```
