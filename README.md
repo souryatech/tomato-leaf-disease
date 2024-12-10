@@ -30,7 +30,7 @@ Tensorflow supports Python versions: 3.9–3.12.
 ### Running the project
 
 ```shell script
-python classify.py -i image.filetype
+python classify.py -i test_images/image.filetype
 ```
 
 
