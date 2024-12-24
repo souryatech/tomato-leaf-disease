@@ -3,7 +3,11 @@
 - Predicts the disease of a tomato leaf plant given an image of one of its tomato leaves
 - Classes: Early Blight, Late Blight, Leaf Mold, Yellowleaf Curl Virus, Mosaic Virus, Healthy
 - This model has an 89% accuracy
+## Requirements
 
+- Make sure uv is installed: (https://github.com/astral-sh/uv)
+- Run `uv sync`
+- Run `uv pip install tensorflow==2.15.0`
 ### Installation
 
 - Copy and paste the following into your terminal:
