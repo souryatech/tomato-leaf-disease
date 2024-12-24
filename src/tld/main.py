@@ -3,7 +3,7 @@ import webbrowser
 import socket
 import time
 from src.tld.helpers import get_file_path
-
+import os
 
 
 def is_port_in_use(port):
@@ -12,8 +12,12 @@ def is_port_in_use(port):
         return sock.connect_ex(("localhost", port)) == 0
 
 def run():
-    PORT = 8501  # Default Streamlit port
+    print("Runned")
+    PORT = int(os.getenv("PORT", 8501))
+    print(f"Using port {PORT}")
+    # PORT = 8501  # Default Streamlit port
     if not is_port_in_use(PORT):
+        print("port not in use")
         # Launch Streamlit app without opening a browser
         process = subprocess.Popen(
             ["streamlit", "run", get_file_path("src/tld/streamlit.py"), "--server.headless=true", f"--server.port={PORT}",
