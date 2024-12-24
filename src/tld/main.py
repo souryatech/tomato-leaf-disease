@@ -17,7 +17,7 @@ def run():
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
         )
-
+        print("Running server")
         # Wait until the server is ready
         for _ in range(30):  # Timeout after 30 seconds
             if is_port_in_use(port):
