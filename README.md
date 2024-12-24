@@ -48,3 +48,6 @@ python classify.py -i test_images/image.filetype
 ```shell script
 python classify.py -i $IMG_NUMBER.jpg
 ```
+## Todo
+- fix pyproject.toml to install tensorflow
+- get railway deployment with streamlit to function
