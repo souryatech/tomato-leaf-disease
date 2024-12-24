@@ -1,5 +1,8 @@
+import streamlit as st
+
+
 def run():
-    print("Hello from tomato-leaf-disease!")
+    st.write("test")
 
 
 if __name__ == "__main__":
