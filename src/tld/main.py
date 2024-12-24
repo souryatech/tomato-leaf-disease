@@ -2,6 +2,9 @@ import subprocess
 import webbrowser
 import socket
 import time
+from src.tld.helpers import get_file_path
+
+
 
 def is_port_in_use(port):
     """Check if a specific port is in use."""
@@ -9,18 +12,19 @@ def is_port_in_use(port):
         return sock.connect_ex(("localhost", port)) == 0
 
 def run():
-    port = 8501  # Default Streamlit port
-    if not is_port_in_use(port):
+    PORT = 8501  # Default Streamlit port
+    if not is_port_in_use(PORT):
         # Launch Streamlit app without opening a browser
         process = subprocess.Popen(
-            ["streamlit", "run", "src/tld/streamlit.py", "--server.headless=true"],
+            ["streamlit", "run", get_file_path("src/tld/streamlit.py"), "--server.headless=true", f"--server.port={PORT}",
+         "--server.address=0.0.0.0"],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
         )
         print("Running server")
         # Wait until the server is ready
         for _ in range(30):  # Timeout after 30 seconds
-            if is_port_in_use(port):
+            if is_port_in_use(PORT):
                 break
             time.sleep(1)
         else:
@@ -29,9 +33,9 @@ def run():
             return
 
         # Open the app in a single browser instance
-        webbrowser.open(f"http://localhost:{port}")
+        webbrowser.open(f"http://localhost:{PORT}")
 
         # Wait for the process to finish
         process.communicate()
     else:
-        print(f"Port {port} is already in use. Is another instance running?")
+        print(f"Port {PORT} is already in use. Is another instance running?")
