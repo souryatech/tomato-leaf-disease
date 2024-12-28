@@ -14,7 +14,7 @@ def is_port_in_use(port):
 
 
 def run():
-    PORT = int(os.getenv("PORT", 8501))
+    PORT = 8080
     if not is_port_in_use(PORT):
         # Launch Streamlit app without opening a browser
         process = subprocess.Popen(
