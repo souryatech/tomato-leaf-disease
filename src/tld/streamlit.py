@@ -24,3 +24,26 @@ three = st.button("3.jpg")
 four = st.button("4.jpg")
 five = st.button("5.jpg")
 six = st.button("6.jpg")
+button_clicked = False;
+if one:
+    img = Image.open("test_images/1.jpg")
+    button_clicked = True
+elif two:
+    img = Image.open("test_images/2.jpg")
+    button_clicked = True
+elif three:
+    img = Image.open("test_images/3.jpg")
+    button_clicked = True
+elif four:
+    img = Image.open("test_images/4.jpg")
+    button_clicked = True
+elif five:
+    img = Image.open("test_images/5.jpg")
+    button_clicked = True
+elif six:
+    img = Image.open("test_images/6.jpg")
+    button_clicked = True
+
+if img is not None and button_clicked:
+    st.image(img)
+    st.write(np.array(img).shape)
