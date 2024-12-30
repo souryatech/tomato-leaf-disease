@@ -8,8 +8,8 @@ dependencies = [
     "matplotlib",
     "numpy<2",
     "opencv-python",
-    "streamlit>=1.41.1",
-    "tensorflow==2.15.0"
+    "streamlit>=1.41.1", 
+    
 ]
 
 [project.scripts]
