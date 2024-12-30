@@ -10,6 +10,8 @@ if img is not None:
     st.image(img)
     img = Image.open(img)
     img = np.array(img)
+    # img = tf.image.resize(image_process, (256, 256))
+
     st.write(img.shape)
 # st.write(img.shape())
 # st.write(img)
