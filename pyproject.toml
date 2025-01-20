@@ -3,14 +3,19 @@ name = "tomato-leaf-disease"
 version = "0.1.0"
 description = "Add your description here"
 # readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10,>=3.11"
 dependencies = [
     "matplotlib",
     "numpy<2",
     "opencv-python",
     "streamlit>=1.41.1", 
-    
+    "tensorflow==2.15.0"
 ]
+
+
+
+
+
 
 [project.scripts]
 start = "src.tld.main:run"
