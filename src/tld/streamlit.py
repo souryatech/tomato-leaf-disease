@@ -1,7 +1,21 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
+import tensorflow as tf
+import os
+from keras.preprocessing import image
+from tensorflow.keras.models import load_model
 
+MODEL = load_model(os.path.join("models", "T1"))
+
+classes = [
+    "Early Blight",
+    "Late Blight",
+    "Leaf Mold",
+    "Yellowleaf Curl Virus",
+    "Mosaic Virus",
+    "Healthy",
+]
 st.title("Tomato Leaf Disease")
 img = None
 
@@ -18,12 +32,13 @@ if img is not None:
 # st.write(type(img))
 st.write("Use a test image")
 
-one = st.button("1.jpg")
-two = st.button("2.jpg")
-three = st.button("3.jpg")
-four = st.button("4.jpg")
-five = st.button("5.jpg")
-six = st.button("6.jpg")
+one = st.button("Early Blight")
+two = st.button("Late Blight")
+three = st.button("Leaf Mold")
+four = st.button("Yellowleaf Curl Virus")
+five = st.button("Mosaic Virus")
+six = st.button("Healthy")
+# 1: Early Blight, 2: Late Blight, 3: Leaf Mold, 4: Yellowleaf Curl Virus, 5: Mosaic Virus, 6: Healthy
 button_clicked = False;
 if one:
     img = Image.open("test_images/1.jpg")
@@ -47,3 +62,14 @@ elif six:
 if img is not None and button_clicked:
     st.image(img)
     st.write(np.array(img).shape)
+
+
+if img is not None:
+    image_process = image.img_to_array(img)
+
+    image_process = tf.image.resize(image_process, (256, 256))
+
+    prediction = MODEL.predict(np.expand_dims(image_process, 0))
+
+    st.write(f"Prediction: {classes[np.argmax(prediction)]}")
+    st.write(f"Confidence: {round(np.max(prediction)*100,2)}%")
